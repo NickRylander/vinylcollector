@@ -1,2 +1,3 @@
 class VinylsController < ApplicationController
+
 end

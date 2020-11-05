@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :songs
   resources :vinyls
   resources :artists
   devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: "omniauth_callbacks"}
