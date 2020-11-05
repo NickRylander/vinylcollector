@@ -4,7 +4,7 @@ class User < ApplicationRecord
   :omniauthable 
  #  omniauth_providers: [:google_oauth2]
   def self.google_omniauth(auth)
-   #  binding.pry
+    # binding.pry
    where(provider: auth["provider"], uid: auth["uid"]).first_or_create(email: auth["info"]["email"]) do |user|
        user.username = auth.info.name
        user.first_name = auth.info.first_name
