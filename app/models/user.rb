@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_many :vinyls
   has_many :songs, through: :vinyls
-  has_namy :artists, through: :vinyls
-  
+  has_many :artists, through: :vinyls
+
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable, 
   :omniauthable 
