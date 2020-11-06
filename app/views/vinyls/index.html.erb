@@ -1,0 +1,9 @@
+<h1>Vinyl Index View</h1>
+<ul>
+<% @vinyls.each do |vinyl| %>
+    <li> <%= link_to vinyl.title, vinyl_path(vinyl) %> </li>
+<% end %>
+</ul>
+
+<%= link_to "Add Vinyl", new_vinyl_path %>
+<%= link_to "Go Home",  root_path%>
