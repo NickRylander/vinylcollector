@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
     before_action :current_artist, only: [:show, :edit, :update, :destroy]
+    before_action :please_sign_in
     
     def index
         @artists = Artist.all
@@ -49,4 +50,9 @@ class ArtistsController < ApplicationController
         @artist = Artist.find_by_id(params[:id])
     end
 
+    def please_sign_in
+        if !user_signed_in?
+            redirect_to new_user_registration_path
+        end
+    end
 end

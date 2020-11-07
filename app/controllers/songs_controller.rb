@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
     before_action :current_song, only: [:show, :edit, :update, :destroy]
+    before_action :please_sign_in
     
     def index
         @vinyl = Vinyl.find(params[:vinyl_id])
@@ -54,5 +55,11 @@ class SongsController < ApplicationController
 
     def current_song
         @song = Song.find_by_id(params[:id])
+    end
+
+    def please_sign_in
+        if !user_signed_in?
+            redirect_to new_user_registration_path
+        end
     end
 end
