@@ -1,6 +1,6 @@
 <h1>Show Vinyl View</h1>
 
-<%= @vinyl.title %><br><br>
+<%= link_to @vinyl.title, vinyl_songs_path(params[:id]) %> - <%= @vinyl.vinyl_size %>" Vinyl<br><br>
 
 <%= link_to "Edit Vinyl", edit_vinyl_path %><br><br>
 <%= link_to "Delete Vinyl", vinyl_path, method: 'delete' %><br><br>

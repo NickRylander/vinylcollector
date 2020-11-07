@@ -14,9 +14,9 @@ end
 end
 
 10.times do
-    Song.create(title: Faker::TvShows::RickAndMorty.quote, duration: rand(60..360), vinyl_id: rand(1..10))
+    Vinyl.create(title: Faker::Music.album, vinyl_size: [7, 12].sample, user_id: rand(1..10), artist_id: rand(1..10))
 end
 
 10.times do
-    Vinyl.create(title: Faker::Music.album, vinyl_size: [7, 12].sample, user_id: rand(1..10), artist_id: rand(1..10))
+    Song.create(title: Faker::TvShows::RickAndMorty.quote, duration: rand(60..360), vinyl_id: rand(1..10))
 end

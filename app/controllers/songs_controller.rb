@@ -2,7 +2,12 @@ class SongsController < ApplicationController
     before_action :current_song, only: [:show, :edit, :update, :destroy]
     
     def index
-        @songs = Song.all
+        @vinyl = Vinyl.find(params[:vinyl_id])
+        if params[:vinyl_id]
+            @songs = Vinyl.find(params[:vinyl_id]).songs
+          else
+            @songs = Song.all
+          end
     end
 
     def new 
