@@ -3,5 +3,6 @@ class Vinyl < ApplicationRecord
   belongs_to :artist
   has_many :songs
 
-  accepts_nested_attributes_for :songs
+  validates :title, presence: true
+  validates :vinyl_size, presence: true
 end
