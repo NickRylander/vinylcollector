@@ -11,6 +11,7 @@ class SongsController < ApplicationController
     end
 
     def new 
+        @vinyl = Vinyl.find(params[:vinyl_id])
         @song = Song.new
     end
 

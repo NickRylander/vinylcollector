@@ -2,6 +2,7 @@
 
 <%= @artist.name %><br><br>
 
+<%= link_to "Add Vinyl", new_artist_vinyl_path(@artist) %>
 <%= link_to "Edit Artists", edit_artist_path %><br><br>
 <%= link_to "Delete Artists", artist_path, method: 'delete' %><br><br>
 <%= link_to "All Artists", artists_path %><br><br>

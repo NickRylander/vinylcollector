@@ -1,22 +1,20 @@
 class VinylsController < ApplicationController
     before_action :current_vinyl, only: [:show, :edit, :update, :destroy]
-    
+
     def index
         @vinyls = Vinyl.all
     end
 
     def new 
+        @artist = Artist.find(params[:artist_id])
         @vinyl = Vinyl.new
     end
 
     def create
-        @vinyl = Vinyl.new(vinyl_params)
+        vinyl = current_user.vinyls.build(vinyl_params)
         # binding.pry
-        if @vinyl.save
-            redirect_to @vinyl
-        else
-            render :new
-        end
+        vinyl.save
+        redirect_to new_vinyl_song_path(vinyl)
     end
 
     def show
@@ -43,10 +41,11 @@ class VinylsController < ApplicationController
     private
 
     def vinyl_params
-        params.require(:vinyl).permit(:title, :vinyl_size, :user_id, :artist_id)
+        params.require(:vinyl).permit(:title, :vinyl_size, :user_id, :artist_id, :song_attributes)
     end
 
     def current_vinyl
         @vinyl = Vinyl.find_by_id(params[:id])
     end
+
 end
