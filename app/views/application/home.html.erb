@@ -1,16 +1,10 @@
 <h1>HOME!</h1>
-
-<%= form_for @vinyl do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %><br><br>
-
-    <%= f.label :vinyl_size %>
-    <%= f.number_field :vinyl_size %><br><br>
-
-
-    <%= f.submit "New Vinyl" %>
-<% end %>
+<h2>Welcome to Vinyl Collector!</h2>
+<p>
+Here at Vinyl Collector, we strive to make it easy for you to manage your personal vinyl collection!
+</p>
+<h3>To start your collection, <%= link_to "click here", new_vinyl_path%>!</h3>
+<h3><%= link_to "View my collection", vinyls_path %></h3>
 
 
-<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-<%= link_to "View Vinyls", vinyls_path %>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
