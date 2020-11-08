@@ -1,9 +1,12 @@
 <h1>Show Artist View</h1>
 
-<%= @artist.name %><br><br>
+<h2>Artist: <%= @artist.name %></h2>
 
-<%= link_to "Add Vinyl", new_artist_vinyl_path(@artist) %>
-<%= link_to "Edit Artists", edit_artist_path %><br><br>
-<%= link_to "Delete Artists", artist_path, method: 'delete' %><br><br>
-<%= link_to "All Artists", artists_path %><br><br>
+<h3>The next step will be to add the vinyl name!</h3><br>
+
+<%= link_to "Add Vinyl", new_artist_vinyl_path(@artist) %><br><br>
+
+<%= link_to "Edit Artists", edit_artist_path %><br>
+<%= link_to "Delete Artists", artist_path, method: 'delete' %><br>
+<%= link_to "All Artists", artists_path %><br>
 

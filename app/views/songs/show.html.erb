@@ -1,9 +1,9 @@
 <h1>Show Song View</h1>
 
-<%= @song.title %><br><br>
+<%= @song.title %> - <%= @song.duration %><br><br>
 
 <%= link_to "Edit Song", edit_song_path %><br><br>
 <%= link_to "Delete Song", song_path, method: 'delete' %><br><br>
-<%= link_to "All Songs", songs_path %><br><br>
+<%= link_to "All Songs", vinyl_songs_path %><br><br>
 
 <%= link_to "Vinyl Collection", vinyls_path %>
