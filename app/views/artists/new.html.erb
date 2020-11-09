@@ -1,6 +1,10 @@
 <h1>New Artist View</h1>
 <h2>The first step to creating a new vinyl, will be to add the name of the artist that made the vinyl!</h2>
 
+<% if @artist.errors.any? %>
+        <h5 class="error"><%= @artist.errors.full_messages.to_sentence %></h5>
+<% end %>
+
 <%= form_for @artist do |f| %>
     <%= f.label :name, "Artist Name" %>
     <%= f.text_field :name %><br><br>

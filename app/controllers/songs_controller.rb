@@ -42,9 +42,8 @@ class SongsController < ApplicationController
     end
 
     def destroy
+        redirect_to vinyl_path(@song.vinyl_id)
         @song.destroy
-
-        redirect_to vinyl_path
     end
 
     private

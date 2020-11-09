@@ -15,7 +15,7 @@ class VinylsController < ApplicationController
         vinyl = current_user.vinyls.build(vinyl_params)
         # binding.pry
         vinyl.save
-        redirect_to new_vinyl_song_path(vinyl)
+        redirect_to new_vinyl_song_path(vinyl.artist_id)
     end
 
     def show
@@ -34,8 +34,9 @@ class VinylsController < ApplicationController
     end
 
     def destroy
+        @vinyl.songs.destroy_all
+        binding.pry
         @vinyl.destroy
-
         redirect_to vinyls_path
     end
 
