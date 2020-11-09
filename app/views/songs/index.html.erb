@@ -12,5 +12,6 @@
     <% else %><%= @long_song.first.duration % 60 %><br><br>
     <% end %></p>
 
-<%= link_to "Add Song", new_vinyl_song_path %>
-<%= link_to "Vinyl Collection", vinyls_path %>
+<%= link_to '<button type="button">Add Song to Vinyl</button>'.html_safe, new_vinyl_song_path %><br><br>
+
+<%= link_to '<button type="button">View my Collection</button>'.html_safe, vinyls_path %><br><br>
