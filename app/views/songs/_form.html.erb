@@ -1,0 +1,18 @@
+<h1>Song Form View</h1>
+
+<% if @song.errors.any? %>
+        <h5 class="error"><%= @song.errors.full_messages.to_sentence %></h5>
+<% end %>
+
+<%= form_for @song do |f| %>
+
+    <%= f.hidden_field :vinyl_id, value: @vinyl.id %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %><br><br>
+
+    <%= f.label :duration %>
+    <%= f.number_field :duration %><br><br>
+
+    <%= f.submit %>
+<% end %>
