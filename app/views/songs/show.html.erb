@@ -4,8 +4,10 @@
 <% else %><%= @song.duration % 60 %><br><br>
 <% end %>
 
-<%= link_to "Edit Song", edit_song_path %><br><br>
-<%= link_to "Delete Song", song_path, method: 'delete' %><br><br>
-<%= link_to "All Songs", vinyl_songs_path(@song.vinyl_id) %><br><br>
+<%= link_to '<button type="button">Edit Song</button>'.html_safe, edit_song_path %><br><br>
 
-<%= link_to "Vinyl Collection", vinyls_path %>
+<%= link_to '<button type="button">Delete Song</button>'.html_safe, song_path, method: 'delete' %><br><br>
+
+<%= link_to '<button type="button">Back to This Vinyl</button>'.html_safe, vinyl_songs_path(@song.vinyl_id) %><br><br>
+
+<%= link_to '<button type="button">View my Collection</button>'.html_safe, vinyls_path %><br><br>
