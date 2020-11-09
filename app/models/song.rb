@@ -5,4 +5,6 @@ class Song < ApplicationRecord
 
   validates :title, presence: true
   validates :duration, presence: true
+
+  scope :longest_song, -> { order("duration desc")}
 end

@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
     before_action :current_song, only: [:show, :edit, :update, :destroy]
     before_action :please_sign_in
-    
+
     def index
         @vinyl = Vinyl.find(params[:vinyl_id])
         if params[:vinyl_id]
@@ -9,6 +9,8 @@ class SongsController < ApplicationController
           else
             @songs = Song.all
           end
+        @long_song = Vinyl.find(params[:vinyl_id]).songs.longest_song
+        # binding.pry
     end
 
     def new 

@@ -6,6 +6,7 @@
 <% end %>
 </ul>
 
-<%= link_to "Add Song", new_vinyl_song_path %>
+<p>Longest Song: <%= @long_song.first.title %></p>
 
+<%= link_to "Add Song", new_vinyl_song_path %>
 <%= link_to "Vinyl Collection", vinyls_path %>

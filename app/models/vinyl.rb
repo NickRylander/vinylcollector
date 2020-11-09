@@ -5,4 +5,6 @@ class Vinyl < ApplicationRecord
 
   validates :title, presence: true
   validates :vinyl_size, presence: true
+
+
 end
