@@ -2,8 +2,7 @@
 
 <%= link_to @vinyl.title, vinyl_songs_path(params[:id]) %> - <%= @vinyl.vinyl_size %>" Vinyl<br><br>
 
-<%= link_to "Edit Vinyl", edit_vinyl_path %><br><br>
-<%= link_to "Delete Vinyl", vinyl_path, method: 'delete' %><br><br>
-<%= link_to "All Vinyls", vinyls_path %><br><br>
 
-<%= link_to "Vinyl Collection", vinyls_path %>
+<%= link_to '<button type="button">Edit This Vinyl</button>'.html_safe, edit_vinyl_path %><br><br>
+<%= link_to '<button type="button">Delete This Vinyl</button>'.html_safe, vinyl_path, method: 'delete' %><br><br>
+<%= link_to '<button type="button">View my Collection</button>'.html_safe, vinyls_path %><br><br>
