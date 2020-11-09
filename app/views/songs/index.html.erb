@@ -8,7 +8,9 @@
 <% end %></li>
 </ul>
 
-<p>Longest Song: <%= @long_song.first.title %></p>
+<p>Longest Song: <%= @long_song.first.title %> - <%= @long_song.first.duration / 60 %>:<% if @long_song.first.duration % 60 < 10 %>0<%= @long_song.first.duration % 60 %><br><br>
+    <% else %><%= @long_song.first.duration % 60 %><br><br>
+    <% end %></p>
 
 <%= link_to "Add Song", new_vinyl_song_path %>
 <%= link_to "Vinyl Collection", vinyls_path %>
