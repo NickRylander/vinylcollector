@@ -2,8 +2,10 @@
 <h1><%= @vinyl.title %></h1>
 <ul>
 <% @songs.each do |song| %>
-    <li> <%= link_to song.title, song_path(song) %> </li>
-<% end %>
+ <li> <%= link_to song.title, song_path(song) %> - <%= song.duration / 60 %>:<% if song.duration % 60 < 10 %>0<%= song.duration % 60 %><br><br>
+    <% else %><%= song.duration % 60 %><br><br>
+    <% end %></li>
+<% end %></li>
 </ul>
 
 <p>Longest Song: <%= @long_song.first.title %></p>
