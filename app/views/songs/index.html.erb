@@ -2,15 +2,15 @@
 <h1><%= @vinyl.title %></h1>
 <ul>
 <% @songs.each do |song| %>
- <li> <%= link_to song.title, song_path(song) %> - <%= song.duration / 60 %>:<% if song.duration % 60 < 10 %>0<%= song.duration % 60 %><br><br>
-    <% else %><%= song.duration % 60 %><br><br>
+ <li> <%= link_to song.title, song_path(song) %> - <%= song.duration / 60 %>:<% if song.duration % 60 < 10 %>0<%= song.duration % 60 %><br>
+    <% else %><%= song.duration % 60 %><br>
     <% end %></li>
 <% end %></li>
 </ul>
 
-<p>Longest Song: <%= @long_song.first.title %> - <%= @long_song.first.duration / 60 %>:<% if @long_song.first.duration % 60 < 10 %>0<%= @long_song.first.duration % 60 %><br><br>
-    <% else %><%= @long_song.first.duration % 60 %><br><br>
-    <% end %></p>
+<h4>Longest Song: <%= @long_song.first.title %> - <%= @long_song.first.duration / 60 %>:<% if @long_song.first.duration % 60 < 10 %>0<%= @long_song.first.duration % 60 %><br>
+    <% else %><%= @long_song.first.duration % 60 %><br>
+    <% end %></h4>
 
 <%= link_to '<button type="button">Add Song to Vinyl</button>'.html_safe, new_vinyl_song_path %><br><br>
 
