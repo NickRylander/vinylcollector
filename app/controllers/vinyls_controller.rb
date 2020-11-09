@@ -52,7 +52,7 @@ class VinylsController < ApplicationController
 
     def please_sign_in
         if !user_signed_in?
-            redirect_to new_user_registration_path
+            redirect_to new_user_registration_path, notice: "Please Sign In"
         end
     end
 end
