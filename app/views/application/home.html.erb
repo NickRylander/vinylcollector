@@ -5,7 +5,7 @@
 Here at Vinyl Collector, we strive to make it easy for you to manage your personal vinyl collection!
 </p>
 <h3>To start your collection, <%= link_to "click here", new_artist_path%>!</h3>
-<h3><%= link_to "View my collection", vinyls_path %></h3>
 
+<%= link_to '<button type="button">View my Collection</button>'.html_safe, vinyls_path %><br><br>
 
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
