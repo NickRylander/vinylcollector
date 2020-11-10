@@ -4,9 +4,7 @@
         <h5 class="error"><%= @song.errors.full_messages.to_sentence %></h5>
 <% end %>
 
-<%= form_for @song do |f| %>
-
-    <%= f.hidden_field :vinyl_id, value: @vinyl.id %>
+<%= form_with model: [@vinyl, @song] do |f| %>
 
     <%= f.label :title %>
     <%= f.text_field :title %><br><br>

@@ -7,15 +7,19 @@ class VinylsController < ApplicationController
     end
 
     def new 
-        @artist = Artist.find(params[:artist_id])
-        @vinyl = Vinyl.new
+        @artist = Artist.find_by_id(params[:artist_id])
+        @vinyl = @artist.vinyls.build
     end
 
     def create
-        vinyl = current_user.vinyls.build(vinyl_params)
-        # binding.pry
-        vinyl.save
-        redirect_to new_vinyl_song_path(vinyl.artist_id)
+        @artist = Artist.find_by_id(params[:artist_id])
+        @vinyl = @artist.vinyls.build(vinyl_params)
+        @vinyl.user_id = current_user.id
+        if @vinyl.save
+            redirect_to new_vinyl_song_path(@vinyl)
+        else
+            render :new
+        end
     end
 
     def show
@@ -35,7 +39,6 @@ class VinylsController < ApplicationController
 
     def destroy
         @vinyl.songs.destroy_all
-        binding.pry
         @vinyl.destroy
         redirect_to vinyls_path
     end

@@ -1,7 +1,7 @@
 <h1>Vinyl Index View</h1>
 <ul>
 <% @vinyls.each do |vinyl| %>
-    <li> <%= link_to vinyl.title, vinyl_path(vinyl) %> </li>
+    <li> <%= link_to vinyl.title, vinyl_path(vinyl) %> - <%= vinyl.artist.name %></li>
 <% end %>
 </ul>
 

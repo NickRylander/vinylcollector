@@ -1,20 +1,16 @@
 <h1>Vinyl Form View</h1>
 
 <% if @vinyl.errors.any? %>
-        <h5 class="error"><%= @vinly.errors.full_messages.to_sentence %></h5>
+        <h5 class="error"><%= @vinyl.errors.full_messages.to_sentence %></h5>
 <% end %>
 
-<%= form_for @vinyl do |f| %>
-    <%= f.hidden_field :user_id %>
-
-    <%= f.hidden_field :artist_id, value: @artist.id %>
+<%= form_with model: [@artist, @vinyl], local: true do |f| %>
 
     <%= f.label :title %>
     <%= f.text_field :title %><br><br>
 
     <%= f.label :vinyl_size, "Vinyl Size (7 or 12)" %>
     <%= f.number_field :vinyl_size %><br><br>
-
 
     <%= f.submit %>
 <% end %>

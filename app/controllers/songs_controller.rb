@@ -3,26 +3,25 @@ class SongsController < ApplicationController
     before_action :please_sign_in
 
     def index
-        @vinyl = Vinyl.find(params[:vinyl_id])
+        @vinyl = Vinyl.find_by_id(params[:vinyl_id])
         if params[:vinyl_id]
-            @songs = Vinyl.find(params[:vinyl_id]).songs
+            @songs = Vinyl.find_by_id(params[:vinyl_id]).songs
           else
             @songs = Song.all
           end
-        @long_song = Vinyl.find(params[:vinyl_id]).songs.longest_song
-        # binding.pry
+        @long_song = Vinyl.find_by_id(params[:vinyl_id]).songs.longest_song
     end
 
     def new 
-        @vinyl = Vinyl.find(params[:vinyl_id])
-        @song = Song.new
+        @vinyl = Vinyl.find_by_id(params[:vinyl_id])
+        @song = @vinyl.songs.build
     end
 
     def create
-        @song = Song.new(song_params)
-        # binding.pry
+        @vinyl = Vinyl.find_by_id(params[:vinyl_id])
+        @song = @vinyl.songs.build(song_params)
         if @song.save
-            redirect_to @song
+            redirect_to vinyl_song_path(@vinyl, @song)
         else
             render :new
         end
