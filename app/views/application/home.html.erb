@@ -1,11 +1,9 @@
-<h1>HOME!</h1>
-<h1>#Set up nav menu</h1>
-<h2>Welcome to Vinyl Collector!</h2>
+<h1>Welcome to Vinyl Collector!</h1>
 <p>
 Here at Vinyl Collector, we strive to make it easy for you to manage your personal vinyl collection!
 </p>
 <h3>To start your collection, <%= link_to "click here", new_artist_path%>!</h3>
-
-<%= link_to '<button type="button">View my Collection</button>'.html_safe, vinyls_path %><br><br>
+<h5>- OR -</h5>
+<h3>You can view your <%= link_to "current collection.", vinyls_path %></h3><br>
 
 <%= link_to '<button type="button">Sign Out</button>'.html_safe, destroy_user_session_path, method: :delete %>
