@@ -10,14 +10,24 @@
 #     User.create(email: Faker::Internet.email, password: Faker::Internet.password)
 # end
 
-10.times do
+3.times do
     Artist.create(name: Faker::Music.band)
 end
 
-10.times do
-    Vinyl.create(title: Faker::Music.album, vinyl_size: [7, 12].sample, user_id: 1, artist_id: rand(1..10))
-end
 
-10.times do
-    Song.create(title: Faker::Space.star, duration: rand(60..360), vinyl_id: rand(1..10))
+Vinyl.create(title: Faker::Music.album, vinyl_size: [7, 12].sample, user_id: 1, artist_id: 1)
+
+Vinyl.create(title: Faker::Music.album, vinyl_size: [7, 12].sample, user_id: 1, artist_id: 2)
+
+Vinyl.create(title: Faker::Music.album, vinyl_size: [7, 12].sample, user_id: 1, artist_id: 3)
+
+
+5.times do
+    Song.create(title: Faker::Space.star, duration: rand(60..360), vinyl_id: 1)
+end
+5.times do
+    Song.create(title: Faker::Space.star, duration: rand(60..360), vinyl_id: 2)
+end
+5.times do
+    Song.create(title: Faker::Space.star, duration: rand(60..360), vinyl_id: 3)
 end

@@ -1,6 +1,12 @@
-<%= @song.title %> - <%= @song.duration / 60 %>:<% if @song.duration % 60 < 10 %>0<%= @song.duration % 60 %><br><br>
+<h1><%= @song.title %></h1>
+
+<h3>
+Song Duration: <%= @song.duration / 60 %>:<% if @song.duration % 60 < 10 %>0<%= @song.duration % 60 %><br><br>
 <% else %><%= @song.duration % 60 %><br><br>
 <% end %>
+Vinyl Name: <%= @song.vinyl.title %><br>
+Artist Name: <%= @song.artist.name %>
+</h3>
 
 <%= link_to '<button type="button">Edit Song</button>'.html_safe, edit_song_path %><br><br>
 

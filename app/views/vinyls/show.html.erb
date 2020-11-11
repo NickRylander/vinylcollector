@@ -1,4 +1,7 @@
-<%= link_to @vinyl.title, vinyl_songs_path(params[:id]) %> - <%= @vinyl.vinyl_size %>" Vinyl - <%= @vinyl.artist.name %><br><br>
+
+
+<h1><%= link_to @vinyl.title, vinyl_songs_path(params[:id]) %> - <%= @vinyl.vinyl_size %>" Vinyl</h1>
+<h3><%= @vinyl.artist.name %></h3><br>
 
 
 <%= link_to '<button type="button">Edit This Vinyl</button>'.html_safe, edit_vinyl_path %><br><br>
