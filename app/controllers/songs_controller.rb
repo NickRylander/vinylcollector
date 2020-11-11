@@ -21,7 +21,7 @@ class SongsController < ApplicationController
         @vinyl = Vinyl.find_by_id(params[:vinyl_id])
         @song = @vinyl.songs.build(song_params)
         if @song.save
-            redirect_to vinyl_song_path(@vinyl, @song)
+            redirect_to vinyl_songs_path(@vinyl)
         else
             render :new
         end

@@ -1,4 +1,3 @@
-<h1>Vinyl Index View</h1>
 <ul>
 <% @vinyls.each do |vinyl| %>
     <li> <%= link_to vinyl.title, vinyl_path(vinyl) %> - <%= vinyl.artist.name %></li>
@@ -7,3 +6,5 @@
 
 <%= link_to '<button type="button">New Vinyl</button>'.html_safe, new_artist_path %><br><br>
 <%= link_to '<button type="button">Home</button>'.html_safe, root_path %>
+
+<h5>Vinyl Index View</h5>

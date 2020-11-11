@@ -1,8 +1,12 @@
-<h1>Show Artist View</h1>
-
 <h2>Artist: <%= @artist.name %></h2>
 
-<h3>The next step will be to add the vinyl name!</h3><br>
+<h3>Vinyls:</h3>
+<ul>
+    <% @artist.vinyls.each do |vinyl| %>
+        <%= vinly.title %>
+    <% end %>
+</ul>
+
 
 <%= link_to "Add Vinyl", new_artist_vinyl_path(@artist) %><br><br>
 
@@ -10,3 +14,4 @@
 <%= link_to "Delete Artists", artist_path, method: 'delete' %><br>
 <%= link_to "All Artists", artists_path %><br>
 
+<h5>Show Artist View</h5>

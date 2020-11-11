@@ -1,5 +1,3 @@
-<h1>Show Song View</h1>
-
 <%= @song.title %> - <%= @song.duration / 60 %>:<% if @song.duration % 60 < 10 %>0<%= @song.duration % 60 %><br><br>
 <% else %><%= @song.duration % 60 %><br><br>
 <% end %>
@@ -11,3 +9,5 @@
 <%= link_to '<button type="button">Back to This Vinyl</button>'.html_safe, vinyl_songs_path(@song.vinyl_id) %><br><br>
 
 <%= link_to '<button type="button">View my Collection</button>'.html_safe, vinyls_path %><br><br>
+
+<h5>Show Song View</h5>
