@@ -6,7 +6,7 @@
 
 <ul>
 <% @songs.each do |song| %>
- <li> <%= link_to song.title, song_path(song) %> - <%= song.duration / 60 %>:<% if song.duration % 60 < 10 %>0<%= song.duration % 60 %><br>
+ <li> <%= link_to song.title, vinyl_song_path(song.id, song.vinyl_id) %> - <%= song.duration / 60 %>:<% if song.duration % 60 < 10 %>0<%= song.duration % 60 %><br>
     <% else %><%= song.duration % 60 %><br>
     <% end %></li>
 <% end %></li>
